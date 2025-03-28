@@ -3,7 +3,7 @@ public class Event {
     private String date;
     private String location;
     private int maxNumberOfSeats = 100;
-    private int availableSeats = 0;
+    private int availableSeats = 100;
     private double price;
     Event(String name, double price){
         this.name = name;
@@ -82,8 +82,13 @@ public class Event {
         return returning;
     }
 
-    public void reserveSeat(){
-        availableSeats--;
+    public void reserveSeat(boolean remove){
+        if (remove){
+            availableSeats++;
+        }
+        else{
+            availableSeats--;
+        }
     }
 
 
