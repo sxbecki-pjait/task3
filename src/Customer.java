@@ -41,6 +41,12 @@ public class Customer {
         reservationList.add(event);
         event.reserveSeat(false);
     }
+    public void addToReservationList(Event event1, Event event2) {
+        reservationList.add(event1);
+        reservationList.add(event2);
+        event1.reserveSeat(false);
+        event2.reserveSeat(false);
+    }
     public void cancelReservation(Event event) {
         reservationList.remove(event);
         event.reserveSeat(true);
