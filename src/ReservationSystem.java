@@ -33,8 +33,11 @@ public class ReservationSystem {
     }
 
     public void makeReservation(Customer customer, Event event){
+        if(event.getAvailableSeats() <= 0){
+            throw new IllegalArgumentException("No available seats");
+        }
         customer.addToReservationList(event);
-        event.reserveSeat(false);
+        event.reserveSeat();
     }
 
     public Event findEvent(String name){
@@ -58,5 +61,15 @@ public class ReservationSystem {
         findEvent(name).setPrice(newPrice);
     }
 
+    public void displayEvents(){
+        System.out.println("=============================");
+        System.out.println("Events in reservation system:");
+        System.out.println();
+        for(Event e : events){
+            System.out.println(e);
+
+        }
+        System.out.println("=============================");
+    }
 
 }

@@ -82,13 +82,12 @@ public class Event {
         return returning;
     }
 
-    public void reserveSeat(boolean remove){
-        if (remove){
-            availableSeats++;
-        }
-        else{
-            availableSeats--;
-        }
+    public void reserveSeat(){
+        availableSeats--;
+    }
+
+    public void cancelReservation(){
+        availableSeats++;
     }
 
 

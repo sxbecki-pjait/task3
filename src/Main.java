@@ -17,11 +17,12 @@ public class Main {
         reservationSystem.addCustomer(c1,c2);
 
         c1.addToReservationList(e1);
-        c1.addToReservationList(e2);
+        c1.addToReservationList(e2,e3);
         c2.addToReservationList(e1,e2);
         c1.displayReservations();
         Event g = reservationSystem.findEvent("Ultrace");
         reservationSystem.changeEventPrice("Ultrace", 1000);
+        reservationSystem.displayEvents();
 
     }
 
